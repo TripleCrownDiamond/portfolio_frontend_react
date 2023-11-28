@@ -7,6 +7,9 @@ import { urlFor, client } from '../../client';
 import './Skills.scss';
 
 const Skills = () => {
+  const styles = {
+    marginTop: "-5px"
+  };
   const [experiences, setExperiences] = useState([]);
   const [skills, setSkills] = useState([]);
 
@@ -43,6 +46,7 @@ const Skills = () => {
                 <img src={urlFor(skill.icon)} alt={skill.name} />
               </div>
               <p className="p-text">{skill.name}</p>
+              <p style={styles} className=" p-text">Level : <strong>{skill.level}</strong></p>
             </motion.div>
           ))}
         </motion.div>
@@ -83,7 +87,7 @@ const Skills = () => {
             </motion.div>
           ))}
         </div>
-      </div>
+      </div >
     </>
   );
 };
